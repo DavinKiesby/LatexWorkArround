@@ -1,0 +1,117 @@
+\documentclass[12pt]{article}
+\pagestyle{empty}
+%\textheight9.5in
+\textheight9in
+%\headsep-.3in
+\headsep-.5in
+%\headsep-1.2in
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\newcommand{\MM}{\mbox{$\cal M$}}
+
+\usepackage{amsmath, amssymb}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+\begin{document}
+
+\begin{center}
+\noindent
+{\bf MATH 510: Ordinary Differential Equations \& Dynamical Systems \\
+Project \#1, due Friday, September 13\\
+Fall 2024}
+\end{center}
+
+
+\noindent
+As we have seen in the video, male fireflies can synchronize their firing. This synchrony arises largely due to the influence of fireflies on each other, and we can think of the flashing rhythm as a forcing on the firefly's intrinsic oscillation. Ermentrout and Rinzel  proposed a simple model of the firefly's flashing rhythm and its response to stimuli. Let $\theta(t)$ be the phase of the firefly's flashing rhythm where $\theta=0$ is the phase of flashing, and assume that $\dot{\theta} = \omega$ in the absence of external stimuli. Let $\alpha$ be a periodic stimulus with $\dot{\alpha}=\Omega$. Then the dynamics of $\theta$ in the presence of the periodic stimulus  $\alpha$ is given by the following:
+$
+\dot{\theta}=\omega + A\sin(\alpha-\theta)
+$
+where $A>0$.
+
+\vspace{.1in}
+\noindent {\bf Problem 1.}
+What is the mathematical condition for entrainment to occur? State the condition in terms of model variables. (Hint: describe entrainment in terms of the phase difference $\phi = \alpha - \theta$).
+
+\begin{enumerate}
+    \item To make sure that the entrainment occurs between the stimulus and the flashing we need the difference between the phases to be a constant. We ensure this occurs with,
+    $$
+    \dot{\phi} = \dot{\alpha} - \dot{\theta} = 0.
+    $$
+    Secondly, this tells us that $\dot{\alpha} = \dot{\theta} = \Omega$, which we can now substitute into our differential equation. This gives us,
+    \begin{align*}
+        \dot{\theta} &= \omega + A\sin(\phi) \\
+        \Omega &= \omega + A\sin(\phi) \\
+        \frac{\Omega - \omega}{A} &= \sin(\phi)
+    \end{align*}
+    This gives us that $\left|\frac{\Omega-\omega}{A}\right| \leq 1$. We can rearrange this such that $|\Omega - \omega| \leq A.$
+\end{enumerate}
+
+
+\vspace{.2in}
+\noindent {\bf Problem 2.}
+Letting $\tau = At$ and $\displaystyle \mu = \frac{\Omega - \omega}{A}$, show that $\phi' =  \mu - \sin \phi$ where $\phi' = d\phi/d\tau$. The dimensionless group $\mu$ is a measure of the frequency difference relative to the resetting strength.
+
+\begin{enumerate}
+    \item 
+    $$
+    \dot{\theta} = \omega + A\sin(\theta)
+    $$
+
+    $$
+    \frac{d\tau}{dt} = A
+    $$
+    $$
+    \frac{dt}{d\tau} = \frac{1}{A}
+    $$
+
+    \begin{align*}
+        \dot{\phi} &= \dot{\alpha} - \dot{\theta} \\
+        &= \Omega - \omega - A\sin(\phi) 
+    \end{align*}
+    \begin{align*}
+        \frac{dt}{d\tau} \frac{d\phi}{dt} &= \frac{1}{A} \left( \Omega - \omega - Asin(\phi) \right) \\
+        \phi' &= \mu - \sin(\phi)
+    \end{align*}
+\end{enumerate}
+
+\vspace{.2in}
+\noindent {\bf Problem 3.}
+Explore how the vector fields change for different values of $\mu \ge 0$. Identify salient parameter regimes, plot the associated vector fields, and provide a biological interpretation of each vector field.
+\vspace{.2in} 
+\begin{enumerate}
+    \item 
+\end{enumerate}
+
+
+\noindent {\bf Problem 4.}
+What bifurcations are present in this system? Be sure to consider all (positve and negative) values of $\mu$. Plot the bifurcation diagram.
+
+\vspace{.2in}
+\noindent {\bf Problem 5.}
+Find a condition for entrainment for the oscillator. What is the phase difference during entrainment? What is the associated the range of entrainment? Interpret the range of entrainment in terms of the dimensionless group $\mu$.
+
+
+\vspace{.2in}
+\noindent {\bf Problem 6.}
+For other species of fireflies, different forms of the response function may be more appropriate. Consider the alternative model $\dot{\Theta}=\Omega$, $\dot{\theta}=\omega+Af(\Theta - \theta)$ where $f$ is given by a triangle wave, not a sine wave. Let
+
+\[ f(\phi) = \begin{cases} 
+      \phi& -\pi/2 \leq \phi \leq \pi/2 \\
+      \pi - \phi & \pi/2\leq \phi \leq 3\pi/2 \\
+   \end{cases}
+\]
+
+on the interval $-\pi/2 \leq \phi \leq 3\pi/2$, and extend $f$ periodically outside this interval.
+
+\begin{enumerate}
+\item Graph $f(\phi)$.
+\item Find the range of entrainment.
+\item Assuming that the firefly is phase-locked to the stimulus, find a formula for the phase difference $\phi*$.
+\end{enumerate}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
